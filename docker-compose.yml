@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    networks:
+      - main
+
+networks:
+  main:
+    driver: bridge

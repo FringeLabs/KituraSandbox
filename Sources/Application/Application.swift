@@ -36,9 +36,24 @@ public class App {
         initializeNotFoundRoute(app: self)
     }
     
+    func getPort() -> Int {
+        // Resolve the port that we want the server to listen on.
+        let port: Int
+        let defaultPort = 8080
+        
+        if let requestedPort = ProcessInfo.processInfo.environment["PORT"] {
+            port = Int(requestedPort) ?? defaultPort
+        } else {
+            port = defaultPort
+        }
+        
+        return port
+    }
+    
     public func run() throws {
         try postInit()
-        Kitura.addHTTPServer(onPort: 8080, with: router)
+        
+        Kitura.addHTTPServer(onPort: getPort(), with: router)
         Kitura.run()
     }
 }
