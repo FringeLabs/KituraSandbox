@@ -14,3 +14,12 @@ Run `swift build` in the project's directory, then run `/.build/debug/generator-
 
 ### Next steps
 Visit [kitura.io](http://www.kitura.io/) for more information about how you can extend your Kitura server, or try out the Kitura Cloud Ready project.
+
+
+### Entpoints
+
+* / 
+* /echo/:name?
+* /books
+* /metrics
+* /swiftmetrics-dash
